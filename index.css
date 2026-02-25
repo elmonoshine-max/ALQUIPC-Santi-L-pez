@@ -1,0 +1,144 @@
+body{
+
+    font-family: Arial;
+    height:100vh;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    
+    background: linear-gradient(270deg,#667eea,#764ba2,#ff6a00,#ee0979);
+    background-size:800% 800%;
+    
+    animation:fondo 15s ease infinite;
+    
+    }
+    
+    @keyframes fondo{
+    
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+    
+    }
+    
+    .header{
+    
+    position:absolute;
+    top:0;
+    width:100%;
+    background:black;
+    padding:15px;
+    text-align:center;
+    
+    }
+    
+    .footer{
+    
+    position:absolute;
+    bottom:0;
+    width:100%;
+    background:black;
+    padding:10px;
+    text-align:center;
+    
+    }
+    
+    .reloj{
+    
+    position:absolute;
+    top:60px;
+    right:20px;
+    font-size:18px;
+    
+    }
+    
+    .contenedor{
+    
+    background:white;
+    color:black;
+    padding:30px;
+    border-radius:15px;
+    width:350px;
+    box-shadow:0 0 30px black;
+    
+    animation:entrada 1s;
+    
+    }
+    
+    @keyframes entrada{
+    
+    from{
+    
+    opacity:0;
+    transform:scale(0.5);
+    
+    }
+    
+    to{
+    
+    opacity:1;
+    transform:scale(1);
+    
+    }
+    
+    }
+    
+    input, select, button{
+    
+    width:100%;
+    margin:5px 0;
+    padding:10px;
+    border-radius:8px;
+    border:none;
+    
+    }
+    
+    button{
+    
+    background:#667eea;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+    
+    }
+    
+    button:hover{
+    
+    transform:scale(1.1);
+    
+    }
+    
+    .nuevo{
+    
+    background:#28a745;
+    
+    }
+    
+    .ayuda{
+    
+    position:absolute;
+    bottom:70px;
+    right:20px;
+    background:cyan;
+    color:black;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    text-align:center;
+    line-height:50px;
+    font-size:25px;
+    cursor:pointer;
+    
+    }
+    
+    #resultado{
+    
+    margin-top:10px;
+    background:#f1f1f1;
+    padding:10px;
+    border-radius:10px;
+    
+    }

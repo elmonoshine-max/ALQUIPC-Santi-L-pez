@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+<title>ALQUIPC </title>
+
+<link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+<header class="header">
+💻 ALQUIPC 
+</header>
+
+<div class="reloj" id="reloj"></div>
+
+<div class="contenedor">
+
+<h1>Factura</h1>
+
+<input type="text" id="cliente" placeholder="ID Cliente (opcional)">
+
+<input type="number" id="equipos" placeholder="Número de equipos">
+
+<input type="number" id="dias" placeholder="Número de días">
+
+<input type="number" id="extra" placeholder="Días adicionales">
+
+<select id="tipo">
+
+<option value="ciudad">Dentro de la ciudad</option>
+
+<option value="fuera">Fuera de la ciudad (Recargo 5%)</option>
+
+<option value="local">Dentro del establecimiento (Descuento 5%)</option>
+
+</select>
+
+<button onclick="facturar()">FACTURAR</button>
+
+<button onclick="nuevaFactura()" class="nuevo">NUEVA FACTURA</button>
+
+<div id="resultado"></div>
+
+</div>
+
+<div class="ayuda" onclick="ayuda()">?</div>
+
+<footer class="footer">
+
+© 2026 ALQUIPC - Santiago López
+
+</footer>
+
+<script src="index.js"></script>
+
+</body>
+</html>
