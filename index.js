@@ -1,5 +1,6 @@
 function facturar() {
-
+    
+    let nombre = document.getElementById("nombre").value;
     let equipos = Number(document.getElementById("equipos").value);
     let dias = Number(document.getElementById("dias").value);
     let extra = Number(document.getElementById("extra").value);
@@ -30,12 +31,14 @@ function facturar() {
     total = total + totalExtra;
 
     document.getElementById("resultado").innerHTML =
+        "Cliente: " + nombre + "<br>" +
         "ID: " + id + "<br>" +
         "Equipos: " + equipos + "<br>" +
         "Días: " + dias + "<br>" +
         "Extras: " + extra + "<br>" +
         "Total: $" + total;
 }
+
 
 
 
