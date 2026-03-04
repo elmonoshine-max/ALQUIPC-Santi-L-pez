@@ -1,12 +1,22 @@
 function facturar() {
     
-    let nombre = document.getElementById("nombre").value;
+    let nombre = document.getElementById("nombre").value.trim();
     let equipos = Number(document.getElementById("equipos").value);
     let dias = Number(document.getElementById("dias").value);
     let extra = Number(document.getElementById("extra").value);
     let tipo = document.getElementById("tipo").value;
 
     let precio = 35000;
+
+
+    let letras = /^[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+$/;
+
+    if (!letras.test(nombre)) {
+    alert("Solo se permiten letras en el nombre");
+    return;
+}
+
+
 
     if (equipos < 2) {
         alert("Mínimo 2 equipos");
@@ -38,6 +48,9 @@ function facturar() {
         "Extras: " + extra + "<br>" +
         "Total: $" + total;
 }
+
+
+
 
 
 
