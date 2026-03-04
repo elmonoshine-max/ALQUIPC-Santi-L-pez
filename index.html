@@ -1,61 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-
-<meta charset="UTF-8">
-<title>ALQUIPC </title>
-
-<link rel="stylesheet" href="index.css">
-
+    <meta charset="UTF-8">
+    <title>ALQUIPC</title>
+    <link rel="stylesheet" href="index.css">
 </head>
-
 <body>
 
-<header class="header">
-💻 ALQUIPC 
-</header>
+    <h1>ALQUIPC💻</h1>
+    <br><hr><br><br><br>
 
-<div class="reloj" id="reloj"></div>
+    <div class="caja">
 
-<div class="contenedor">
+        <strong><h2>Alquiler de portatiles</h2></strong>
+        <input type="number" id="equipos" placeholder="Número de equipos (mínimo 2)">
 
-<h1>Factura</h1>
+        <input type="number" id="dias" placeholder="Número de días iniciales">
 
-<input type="text" id="cliente" placeholder="ID Cliente (opcional)">
+        <input type="number" id="extra" placeholder="Días adicionales">
 
-<input type="number" id="equipos" placeholder="Número de equipos">
+        <select id="tipo">
+            <option value="ciudad">Dentro de la ciudad</option>
+            <option value="fuera">Fuera de la ciudad (+5%)</option>
+            <option value="local">Dentro del establecimiento (-5%)</option>
+        </select>
 
-<input type="number" id="dias" placeholder="Número de días">
+        <button onclick="facturar()">Facturar</button>
+        
 
-<input type="number" id="extra" placeholder="Días adicionales">
+        <p id="resultado"></p>
 
-<select id="tipo">
+    </div>
 
-<option value="ciudad">Dentro de la ciudad</option>
-
-<option value="fuera">Fuera de la ciudad (Recargo 5%)</option>
-
-<option value="local">Dentro del establecimiento (Descuento 5%)</option>
-
-</select>
-
-<button onclick="facturar()">FACTURAR</button>
-
-<button onclick="nuevaFactura()" class="nuevo">NUEVA FACTURA</button>
-
-<div id="resultado"></div>
-
-</div>
-
-<div class="ayuda" onclick="ayuda()">?</div>
-
-<footer class="footer">
-
-© 2026 ALQUIPC - Santiago López
-
-</footer>
+    <footer>
+        <strong>Santiago López Salazar | Derechos reservados</strong>
+    </footer>
 
 <script src="index.js"></script>
-
 </body>
 </html>

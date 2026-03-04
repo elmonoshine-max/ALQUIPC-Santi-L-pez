@@ -1,110 +1,42 @@
-// RELOJ
+function facturar() {
 
-setInterval(()=>{
+    let equipos = Number(document.getElementById("equipos").value);
+    let dias = Number(document.getElementById("dias").value);
+    let extra = Number(document.getElementById("extra").value);
+    let tipo = document.getElementById("tipo").value;
 
-    let fecha=new Date();
-    
-    document.getElementById("reloj").innerHTML=
-    
-    fecha.toLocaleString();
-    
-    },1000);
-    
-    
-    // FACTURAR
-    
-    function facturar(){
-    
-    let cliente=document.getElementById("cliente").value;
-    
-    if(cliente=="")
-    cliente="ALQ-"+Math.floor(Math.random()*10000);
-    
-    let equipos=parseInt(document.getElementById("equipos").value);
-    
-    let dias=parseInt(document.getElementById("dias").value);
-    
-    let extra=parseInt(document.getElementById("extra").value)||0;
-    
-    let tipo=document.getElementById("tipo").value;
-    
-    if(equipos<2){
-    
-    alert("Mínimo 2 equipos");
-    
-    return;
-    
+    let precio = 35000;
+
+    if (equipos < 2) {
+        alert("Mínimo 2 equipos");
+        return;
     }
-    
-    let precio=35000;
-    
-    let base=equipos*dias*precio;
-    
-    let recargo=0;
-    
-    if(tipo=="fuera")
-    recargo=base*0.05;
-    
-    let descuentoLocal=0;
-    
-    if(tipo=="local")
-    descuentoLocal=base*0.05;
-    
-    let subtotal=base+recargo-descuentoLocal;
-    
-    let descuentoExtra=0;
-    
-    if(extra>0){
-    
-    let porcentaje=extra*2;
-    
-    if(porcentaje>10)
-    porcentaje=10;
-    
-    descuentoExtra=subtotal*porcentaje/100;
-    
+
+    let id = Math.floor(Math.random() * 1000);
+
+    let total = equipos * dias * precio;
+
+    if (tipo == "fuera") {
+        total = total + total * 0.05;
     }
-    
-    let total=subtotal-descuentoExtra;
-    
-    
-    document.getElementById("resultado").innerHTML=
-    
-    `
-    Cliente: ${cliente}<br>
-    
-    Valor base: $${base.toLocaleString()}<br>
-    
-    Recargo: $${recargo.toLocaleString()}<br>
-    
-    Descuento: $${descuentoLocal.toLocaleString()}<br>
-    
-    Extra: $${descuentoExtra.toLocaleString()}<br>
-    
-    <h2>Total: $${total.toLocaleString()}</h2>
-    
-    `;
-    
+
+    if (tipo == "local") {
+        total = total - total * 0.05;
     }
-    
-    
-    // NUEVA FACTURA
-    
-    function nuevaFactura(){
-    
-    document.getElementById("cliente").value="";
-    document.getElementById("equipos").value="";
-    document.getElementById("dias").value="";
-    document.getElementById("extra").value="";
-    document.getElementById("resultado").innerHTML="";
-    
-    }
-    
-    
-    // AYUDA
-    
-    function ayuda(){
-    
-    alert("Sistema de facturación ALQUIPC\n\nIngresa los datos y presiona FACTURAR");
-    
-    }
+
+    let totalExtra = equipos * extra * precio;
+    totalExtra = totalExtra - totalExtra * (extra * 0.02);
+
+    total = total + totalExtra;
+
+    document.getElementById("resultado").innerHTML =
+        "ID: " + id + "<br>" +
+        "Equipos: " + equipos + "<br>" +
+        "Días: " + dias + "<br>" +
+        "Extras: " + extra + "<br>" +
+        "Total: $" + total;
+}
+
+
+
+
